@@ -1,105 +1,169 @@
-🧠 Python Functions – Notes from Python Programming for Data Science
-This section contains structured notes on Python functions, based on the course Python Programming for Data Science by Miuul. It covers key concepts, usage patterns, and best practices.
+<img src="https://cdn-icons-png.flaticon.com/24/197/197374.png" alt="UK Flag"> <strong>English</strong>
 
-📌 What is a Function?
-A function is a reusable block of code designed to perform a specific task. It helps reduce repetition, organizes code better, and improves readability.
+🧠 **Python Functions – Notes from Python Programming for Data Science**  
+This section contains structured notes on Python functions, based on the course *Python Programming for Data Science* by Miuul. It covers key concepts, usage patterns, and best practices.
 
-You define a function using the def keyword, followed by the function name and parentheses. Inside the parentheses, you can define parameters.
+📌 **What is a Function?**  
+A function is a reusable block of code designed to perform a specific task. It helps reduce repetition, organizes code better, and improves readability.  
+You define a function using the `def` keyword, followed by the function name and parentheses. Inside the parentheses, you can define parameters.
 
-For example, a basic function definition:
-
+Example:  
+```python
 def greet():
+    print("Hello")
+```
 
-Inside the function body, you write the code to be executed.
+Inside the function body, you write the code to be executed.  
+You can use `return` to send back a result.
 
-You can use return to send back a result.
+🧱 **Topics Covered**
 
-🧱 Topics Covered
-1. Defining a Function
-To define a function, use the syntax:
-def function_name(parameters):
+- **Defining a Function**  
+  Syntax: `def function_name(parameters):`  
+  Parameters can be optional or required.
 
-You can leave the parameter list empty or include one or more parameters.
+  Example:  
+  ```python
+  def greet(name):
+      return f"Hello, {name}"
+  ```
 
-Example:
-A function named greet that takes a name parameter and returns a greeting message.
+- **Calling a Function**  
+  ```python
+  greet("Murat")  # → "Hello, Murat"
+  greet()         # if default is set → "Hello, Guest"
+  ```
 
-2. Calling a Function
-After defining a function, you can call it by writing its name followed by parentheses.
-If the function has parameters, you must pass values to them during the call.
+- **Return Statement**  
+  Returns a result from the function to be stored or used directly.
 
-Example:
+- **Default Parameters**  
+  Parameters with default values:
+  ```python
+  def greet(name="Guest"):
+      return f"Hello, {name}"
+  ```
 
-Calling greet("Murat") returns “Hello, Murat”.
+- **Flexible Number of Arguments**  
+  - `*args`: for variable positional arguments  
+  - `**kwargs`: for variable keyword arguments
 
-Calling greet() (if a default is set) returns “Hello, Guest”.
+- **Lambda Functions**  
+  Anonymous one-line functions:  
+  ```python
+  lambda x, y: x + y
+  ```
 
-3. Return Statement
-The return keyword is used to send back the result from a function.
-You can store this result in a variable or use it directly.
+- **Scope and Namespace**  
+  - Variables inside functions are local.  
+  - Use `global` to access or modify global variables inside functions.
 
-4. Default Parameters
-You can assign default values to parameters so that they are optional during function calls.
+- **Nested Functions**  
+  Functions can be defined within functions for encapsulation.
 
-Example:
-If a parameter is defined as name="Guest", calling the function without providing name will use the default value “Guest”.
+- **Comprehensions within Functions**  
+  Use list/dict/set comprehensions inside functions for concise data structure creation.
 
-5. Flexible Number of Arguments
-Use *args to pass a variable number of positional arguments.
+- **Best Practices**  
+  ✅ Use meaningful names  
+  ✅ Keep functions short  
+  ✅ Add docstrings  
+  ✅ Avoid side effects  
+  ✅ Reuse logic
 
-Use **kwargs to pass a variable number of keyword arguments.
+🎯 **Why Use Functions?**  
+- Organize code into logical units  
+- Reuse logic  
+- Easier testing and debugging  
+- Embrace modular design
 
-This allows more flexible and dynamic function calls.
+📌 **Source**  
+Based on the *Python Programming for Data Science* course by [Miuul](https://miuul.com), intended for personal learning.
 
-6. Lambda Functions
-Lambda functions are small, anonymous functions defined using the lambda keyword.
 
-They are useful for quick one-line operations and are often used with functions like map, filter, and sorted.
 
-Example:
-A lambda that adds two numbers could be written as: lambda x, y: x + y
 
-7. Scope and Namespace
-Variables defined inside a function are local and not accessible outside.
+<br><br><br><br>
 
-Global variables can be accessed inside functions unless shadowed.
+<img src="https://cdn-icons-png.flaticon.com/24/197/197510.png" alt="TR Flag"> <strong>Türkçe</strong>
 
-Use the global keyword if you want to modify a global variable from inside a function.
+🧠 **Python Fonksiyonları – Python ile Veri Bilimi Programlaması Notları**  
+Bu bölüm, Miuul’un *Python Programming for Data Science* kursuna dayalı olarak Python fonksiyonları hakkında yapılandırılmış notları içermektedir. Temel kavramları, kullanım biçimlerini ve en iyi uygulamaları kapsar.
 
-8. Nested Functions
-You can define a function inside another function.
-Inner functions can be used to encapsulate logic and maintain cleaner scopes.
+📌 **Fonksiyon Nedir?**  
+Fonksiyon, belirli bir görevi yerine getirmek için tasarlanmış, tekrar kullanılabilir bir kod bloğudur.  
+Kod tekrarını azaltır, okunabilirliği artırır ve kodun daha düzenli olmasını sağlar.  
+`def` anahtar kelimesi ile tanımlanır, ardından fonksiyon ismi ve parantezler gelir. Parantez içine parametreler tanımlanabilir.
 
-9. Comprehensions within Functions
-Inside functions, you can use:
+Örnek:  
+```python
+def greet():
+    print("Merhaba")
+```
 
-List comprehensions
+Fonksiyon gövdesine, çalıştırılacak kod yazılır.  
+`return` ifadesiyle sonuç geri döndürülebilir.
 
-Dictionary comprehensions
+🧱 **Kapsanan Konular**
 
-Set comprehensions
+- **Fonksiyon Tanımlama**  
+  Söz dizimi: `def fonksiyon_ismi(parametreler):`  
+  Parametreler isteğe bağlı ya da zorunlu olabilir.
 
-These provide a concise way to generate new data structures from iterable objects.
+  Örnek:  
+  ```python
+  def greet(name):
+      return f"Merhaba, {name}"
+  ```
 
-10. Best Practices
-Use meaningful function names
+- **Fonksiyon Çağırma**  
+  ```python
+  greet("Murat")  # → "Merhaba, Murat"
+  greet()         # varsayılan değer varsa → "Merhaba, Misafir"
+  ```
 
-Keep functions short and focused on a single task
+- **Return İfadesi**  
+  Fonksiyondan bir sonucu geri döndürmek için kullanılır.
 
-Add docstrings to explain what the function does
+- **Varsayılan Parametreler**  
+  Parametreye varsayılan bir değer atanabilir:
+  ```python
+  def greet(name="Misafir"):
+      return f"Merhaba, {name}"
+  ```
 
-Avoid side effects unless necessary
+- **Esnek Parametreler**  
+  - `*args`: İsteğe bağlı sayıda pozisyonel parametre  
+  - `**kwargs`: İsteğe bağlı sayıda anahtar-değer çifti
 
-Reuse code by creating general-purpose functions
+- **Lambda Fonksiyonları**  
+  Küçük, isimsiz fonksiyonlardır:  
+  ```python
+  lambda x, y: x + y
+  ```
 
-🎯 Why Use Functions?
-To organize code into logical sections
+- **Scope (Kapsam) ve Namespace (İsim Alanı)**  
+  - Fonksiyon içinde tanımlanan değişkenler yereldir.  
+  - Dışarıdaki global değişkenlere erişmek için `global` kullanılır.
 
-To reuse logic multiple times
+- **İç İçe Fonksiyonlar (Nested Functions)**  
+  Bir fonksiyon içinde başka bir fonksiyon tanımlanabilir.
 
-To make testing and debugging easier
+- **Comprehension Kullanımı**  
+  Fonksiyonlar içinde liste/sözlük/küme comprehension kullanılarak kısa ve etkili veri yapıları oluşturulabilir.
 
-To follow modular programming principles
+- **En İyi Uygulamalar**  
+  ✅ Anlamlı fonksiyon isimleri kullanın  
+  ✅ Fonksiyonları kısa ve tek işleve odaklı yazın  
+  ✅ Açıklayıcı docstring ekleyin  
+  ✅ Yan etkilerden kaçının  
+  ✅ Tekrar eden kodları fonksiyon haline getirin
 
-📌 Source
-These notes are based on the Python Programming for Data Science course by Miuul, and are intended for educational and personal study purposes.
+🎯 **Neden Fonksiyon Kullanmalı?**  
+- Kodu mantıksal parçalara ayırmak için  
+- Aynı mantığı tekrar tekrar kullanmak için  
+- Test ve hata ayıklamayı kolaylaştırmak için  
+- Modüler programlamayı benimsemek için
+
+📌 **Kaynak**  
+Notlar, kişisel öğrenim amacıyla hazırlanmış olup, [Miuul](https://miuul.com) tarafından sunulan *Python Programming for Data Science* kursuna dayanmaktadır.
