@@ -49,6 +49,9 @@ Ideal for data cleaning and transformation
 📌 Source
 These notes are based on the Python Programming for Data Science course by Miuul, and reflect my own practice and understanding of Python comprehensions.
 
+
+
+
 Türkçe – Liste ve Sözlük Üreteçleri (Comprehensions)
 Bu bölümde Miuul tarafından verilen Python Programming for Data Science eğitimi kapsamında işlenen liste (list) ve sözlük (dictionary) comprehensions (üreteçler) konusuna dair özet notlar yer almaktadır.
 
