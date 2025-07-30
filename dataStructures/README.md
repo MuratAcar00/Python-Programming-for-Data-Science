@@ -32,7 +32,7 @@ Feel free to open an issue or submit a pull request if you have suggestions, cor
 
 <br><br><br><br>
 
-<img src="https://cdn-icons-png.flaticon.com/24/197/197510.png" alt="TR Flag"> <strong>Türkçe</strong>
+<img src="https://twemoji.maxcdn.com/v/latest/svg/1f1f9-1f1f7.svg" width="20"/> <strong>Türkçe</strong>
 
 🐍 **Python ile Veri Bilimi Programlaması - Veri Yapıları Notları**  
 Bu depo, Miuul tarafından sunulan "Python Programming for Data Science" kursunun *Veri Yapıları* modülüne ait kişisel notlarımı içermektedir.
