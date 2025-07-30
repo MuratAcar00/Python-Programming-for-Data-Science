@@ -47,7 +47,7 @@ Faster execution
 Ideal for data cleaning and transformation
 
 📌 Source
-These notes are based on the Python Programming for Data Science course by Miuul, and reflect my own practice and understanding of Python comprehensions.
+These notes are based on the Python Programming for Data Science course by Miuul, and reflect my own practice and understanding of Python comprehensions.<br><br><br><br>
 
 
 
