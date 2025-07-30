@@ -85,7 +85,7 @@ Based on the *Python Programming for Data Science* course by [Miuul](https://miu
 
 <br><br><br><br>
 
-<img src="https://cdn-icons-png.flaticon.com/24/197/197510.png" alt="TR Flag"> <strong>Türkçe</strong>
+<img src="https://twemoji.maxcdn.com/v/latest/svg/1f1f9-1f1f7.svg" width="20"/> <strong>Türkçe</strong>
 
 🧠 **Python Fonksiyonları – Python ile Veri Bilimi Programlaması Notları**  
 Bu bölüm, Miuul’un *Python Programming for Data Science* kursuna dayalı olarak Python fonksiyonları hakkında yapılandırılmış notları içermektedir. Temel kavramları, kullanım biçimlerini ve en iyi uygulamaları kapsar.
