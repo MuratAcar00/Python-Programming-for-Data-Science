@@ -1,4 +1,4 @@
-🇺🇸 English – List and Dictionary Comprehensions
+English – List and Dictionary Comprehensions
 This section contains concise notes on list and dictionary comprehensions in Python, based on the Python Programming for Data Science course by Miuul. Comprehensions offer a powerful and readable way to create and manipulate collections.
 
 📋 What is a Comprehension?
