@@ -55,3 +55,64 @@ These notes are created for practice and revision purposes, and reflect my under
 📝 Source
 This content is based on the Miuul course "Python Programming for Data Science".
 All examples and concepts are simplified for beginner-level learning.
+
+
+
+
+Python Koşullar ve Döngüler – Python Programming for Data Science Notları
+Bu bölüm, Miuul tarafından verilen Python Programming for Data Science eğitimi kapsamında öğrenilen Koşul İfadeleri ve Döngüler konularına ait yapılandırılmış notları içermektedir.
+
+✅ Koşul İfadeleri (Conditional Statements)
+Koşul ifadeleri, belirli bir koşulun doğru (True) veya yanlış (False) olmasına bağlı olarak belirli kod bloklarının çalıştırılmasını sağlar.
+
+1. if İfadesi
+Belirli bir koşul sağlanıyorsa kod bloğunu çalıştırır.
+Örnek: x değişkeni 10'dan büyükse belirli bir işlem yapılır.
+
+2. if-else İfadesi
+Koşul doğruysa bir işlem, yanlışsa başka bir işlem yapılır.
+Örnek: Kullanıcı 18 yaşında veya daha büyükse “Oy kullanabilirsin”, aksi halde “Oy kullanamazsın” yazdırılır.
+
+3. if-elif-else İfadesi
+Birden fazla koşulu sırayla kontrol etmek için kullanılır.
+Örnek: Not 90'dan yüksekse "A", 80'den yüksekse "B", değilse "Başarısız" sonucu döndürülür.
+
+4. Mantıksal Operatörler (Logical Operators)
+Koşulları birleştirmek için şu operatörler kullanılır:
+
+and: Her iki koşul da doğru olmalı
+
+or: En az bir koşul doğru olmalı
+
+not: Koşulun tersini alır (doğruyu yanlış yapar)
+
+🔁 Python'da Döngüler
+Döngüler, özellikle liste veya string gibi veri yapıları üzerinde tekrarlı işlemler yapmak için kullanılır.
+
+1. for Döngüsü
+Liste, demet (tuple), küme, sözlük, string gibi yapılardaki öğeler üzerinde sırayla işlem yapmak için kullanılır.
+Örnek: Bir sayı listesi üzerinde dolaşıp her öğeyi yazdırmak.
+
+2. while Döngüsü
+Belirtilen koşul doğru olduğu sürece çalışmaya devam eder.
+Örnek: Doğru şifre girilene kadar kullanıcıdan giriş istemek.
+
+3. break ve continue
+break: Döngüyü tamamen sonlandırır.
+
+continue: Geçerli adımı atlayıp bir sonraki döngü adımına geçer.
+
+4. range() ile Döngü
+range(başlangıç, bitiş, adım) ifadesiyle belirli bir aralıkta sayı üretip for döngüsüyle kullanılır.
+Örnek: range(0, 5) ifadesi 0, 1, 2, 3, 4 sayılarını üretir.
+
+5. İç İçe Döngüler (Nested Loops)
+Bir döngü başka bir döngünün içinde çalıştırılabilir.
+Çok boyutlu yapılarda (örneğin matrislerde) kullanılır.
+
+📌 Amaç
+Bu notlar, konuları tekrar etmek ve pratik yapmak amacıyla hazırlanmıştır. Python'daki kontrol yapıları hakkındaki kişisel öğrenme sürecimi yansıtmaktadır.
+
+📝 Kaynak
+İçerik, Miuul tarafından verilen "Python Programming for Data Science" eğitimi temel alınarak hazırlanmıştır.
+Örnekler ve açıklamalar, yeni başlayanlar için sadeleştirilmiş ve anlaşılır şekilde sunulmuştur.
