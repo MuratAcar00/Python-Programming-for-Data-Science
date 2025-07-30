@@ -1,4 +1,4 @@
-🔄 Python Conditions and Loops – Notes from Python Programming for Data Science
+<img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" width="20"/> 🔄 Python Conditions and Loops – Notes from Python Programming for Data Science
 This section includes structured notes on Conditional Statements and Loops in Python. All content is derived from the Python Programming for Data Science course by Miuul.
 
 ✅ Conditional Statements
@@ -59,7 +59,7 @@ All examples and concepts are simplified for beginner-level learning.
 
 
 
-Python Koşullar ve Döngüler – Python Programming for Data Science Notları
+<img src="https://twemoji.maxcdn.com/v/latest/svg/1f1f9-1f1f7.svg" width="20"/>Python Koşullar ve Döngüler – Python Programming for Data Science Notları
 Bu bölüm, Miuul tarafından verilen Python Programming for Data Science eğitimi kapsamında öğrenilen Koşul İfadeleri ve Döngüler konularına ait yapılandırılmış notları içermektedir.
 
 ✅ Koşul İfadeleri (Conditional Statements)
