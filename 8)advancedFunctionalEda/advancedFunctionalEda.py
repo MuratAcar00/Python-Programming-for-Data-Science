@@ -57,3 +57,60 @@ check_df(df)
 df = sns.load_dataset("flights")
 check_df(df)
 
+
+ #2. Kategorik Değişken Analizi (Analysis of Categorical Variables)
+
+df = sns.load_dataset("titanic")
+df.head()
+
+df["embarked"].value_counts()
+df["sex"].unique()  #Hangi değişkenlerin oldugu bılgısını verır
+df["sex"].nunique() #Değişkenlerden kac tane oldugu bılgısını verır
+
+cat_cols = [col for col in df.columns if str(df[col].dtypes) in ["category", "object", "bool"]]
+cat_cols
+
+#Aslında kategorik olup veri tipleri int ve float olanlar için
+#numeric görünümlü kategoriler
+num_but_cat = [col for col in df.columns if df[col].nunique() < 10 and df[col].dtypes in ["int", "float"]]
+num_but_cat
+
+#Değişkenin tipi "category" ya da "object" ise ve eşsiz sınıf sayısı 20'den fazla ise bu ölçülebilir bir değişken değildir bunları yakala
+cat_but_car = [col for col in df.columns if df[col].nunique() > 20 and str(df[col].dtypes) in ["category", "object"]]
+cat_but_car
+
+
+cat_cols = cat_cols + num_but_cat
+cat_cols
+
+cat_cols = [col for col in cat_cols if col not in cat_but_car]
+cat_cols
+
+
+#Seçtiğimiz değişkenleri dataframe'e taşıma:
+
+df[cat_cols]
+
+df[cat_cols].nunique()
+
+#cat_col'un ıcınde olmayan degıskenler
+
+[col for col in df.columns if col not in cat_cols]
+
+
+
+df["survived"].value_counts()   #Değişkenin değerlerinin sayısı
+100 * df["survived"].value_counts() / len(df)   #Değişkenin değerlerinin yüzdelik hali
+
+#Yukarıdaki bilgileri tek tek girip cıktı almak yerıne yazacagımız fonksiyon:
+
+def cat_summary(dataframe, col_name):
+    print(pd.DataFrame({col_name: dataframe[col_name].value_counts(),
+                       "Ratio": 100 * dataframe[col_name].value_counts() / len(dataframe)}))
+    print("************************")
+    
+#Bu sekılde tek tek tanımlamak yerıne donguye alalım
+cat_summary(df, "sex")
+
+for col in cat_cols:
+    cat_summary(df, col)
