@@ -146,3 +146,46 @@ for col in cat_cols:
         cat_summary(df, col,plot=True)
 
 
+    #3. Sayısal Değişken Analizi (Analysis of Numerical Variables)
+
+df[["age", "fare"]].describe().T
+
+
+#Veri seti içerisinden "numeric" değişkenleri seçme:
+
+num_cols = [col for col in df.columns if df[col].dtypes in ["int", "float"]]
+
+#num_cols'ta olupta cat_cols'da olmayanları seçelim:
+
+num_cols = [col for col in num_cols if col not in cat_cols]
+
+def num_summary(dataframe, numerical_col):
+    quantiles = [0.05, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 0.95, 0.99]
+    print(dataframe[numerical_col].describe(quantiles).T)
+
+num_summary(df, "age")
+
+#Yukarıdakı ıslemı her bır degısken ıcın tek tek yapmak ıcın:
+
+for col in num_cols:
+    num_summary(df, col)
+
+
+#Grafikleştirmek için:
+
+def num_summary(dataframe, numerical_col, plot=False):
+    quantiles = [0.05, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 0.95, 0.99]
+    print(dataframe[numerical_col].describe(quantiles).T)
+
+    if plot:
+        dataframe[numerical_col].hist()
+        plt.xlabel(numerical_col)
+        plt.title(numerical_col)
+        plt.show(block=True)
+
+num_summary(df, "age", plot=True)
+
+#Tüm değişkenlerde uygulamak ıcın:
+
+for col in num_cols:
+    num_summary(df, col, plot=True)
