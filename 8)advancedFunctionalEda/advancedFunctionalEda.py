@@ -8,7 +8,7 @@
  #5. Korelasyon Analizi (Analysis of Correlation)
 
 
-
+############################################################
     #1. Genel Resim:
 
 import numpy as np
@@ -57,7 +57,7 @@ check_df(df)
 df = sns.load_dataset("flights")
 check_df(df)
 
-
+###################################################################
  #2. Kategorik Değişken Analizi (Analysis of Categorical Variables)
 
 df = sns.load_dataset("titanic")
@@ -145,7 +145,7 @@ for col in cat_cols:
     else:
         cat_summary(df, col,plot=True)
 
-
+######################################################################
     #3. Sayısal Değişken Analizi (Analysis of Numerical Variables)
 
 df[["age", "fare"]].describe().T
@@ -190,7 +190,7 @@ num_summary(df, "age", plot=True)
 for col in num_cols:
     num_summary(df, col, plot=True)
 
-
+###################################################################################################################
     #4. Değişkenlerin Yakalanması ve İşlemlerin Genelleştirilmesi (Capturing Variables and Generalizing Operations)
 
 df.head()
@@ -280,3 +280,41 @@ def num_summary(dataframe, numerical_col, plot=False):
 
 for col in num_cols:
     num_summary(df, col, plot=True)
+
+
+#################################################################
+    #5. Hedef Değişken Analizi (Analysis of Target Variable)
+
+
+df.head()
+df["survived"].value_counts()
+cat_summary(df, "survived")
+
+
+#Hedef Değişkenin Kategorik Değişkenler ile Analizi
+
+df.groupby("sex")["survived"].mean()
+
+def target_summary_with_cat(dataframe, target, categorical_col):
+    print(pd.DataFrame({"TARGET_MEAN": dataframe.groupby(categorical_col) [target].mean()}))
+
+target_summary_with_cat(df, "survived", "pclass")
+
+
+for col in cat_cols:
+    target_summary_with_cat(df, "survived", col)
+
+#Hedef Değişkenin Sayısal Değişkenler ile Analizi
+
+df.groupby("survived")["age"].mean()
+df.groupby("survived").agg({"age": "mean"})
+
+
+def target_summary_with_num(dataframe, target, numerical_col):
+    print(dataframe.groupby(target).agg({numerical_col: "mean"}), end="\n\n\n")
+
+target_summary_with_num(df, "survived", "age")
+
+for col in num_cols:
+    target_summary_with_num(df, "survived", col)
+
