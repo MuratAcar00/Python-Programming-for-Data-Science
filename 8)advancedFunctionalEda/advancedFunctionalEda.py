@@ -8,7 +8,7 @@
  #5. Korelasyon Analizi (Analysis of Correlation)
 
 
-############################################################
+#######################################################################
     #1. Genel Resim:
 
 import numpy as np
@@ -57,7 +57,7 @@ check_df(df)
 df = sns.load_dataset("flights")
 check_df(df)
 
-###################################################################
+#######################################################################
  #2. Kategorik Değişken Analizi (Analysis of Categorical Variables)
 
 df = sns.load_dataset("titanic")
@@ -145,7 +145,7 @@ for col in cat_cols:
     else:
         cat_summary(df, col,plot=True)
 
-######################################################################
+#######################################################################
     #3. Sayısal Değişken Analizi (Analysis of Numerical Variables)
 
 df[["age", "fare"]].describe().T
@@ -190,7 +190,7 @@ num_summary(df, "age", plot=True)
 for col in num_cols:
     num_summary(df, col, plot=True)
 
-###################################################################################################################
+#######################################################################
     #4. Değişkenlerin Yakalanması ve İşlemlerin Genelleştirilmesi (Capturing Variables and Generalizing Operations)
 
 df.head()
@@ -248,7 +248,6 @@ def grab_col_names(dataframe, cat_th=10, car_th=20):
 
     return cat_cols, num_cols, cat_but_car
 
-help(grab_col_names)
 
 cat_cols, num_cols, cat_but_car = grab_col_names(df)
 
@@ -282,7 +281,7 @@ for col in num_cols:
     num_summary(df, col, plot=True)
 
 
-#################################################################
+#######################################################################
     #5. Hedef Değişken Analizi (Analysis of Target Variable)
 
 
@@ -317,4 +316,55 @@ target_summary_with_num(df, "survived", "age")
 
 for col in num_cols:
     target_summary_with_num(df, "survived", col)
+
+#######################################################################
+    #6. Korelasyon Analizi (Analysis of Correlation)
+
+df = pd.read_csv("Dosya Yolu")
+df = df.iloc[:, 1:-1]
+df.head()
+
+num_cols = [col for col in df.columns if df[col].dtype in [int, float]]
+
+corr = df[num_cols].corr()
+
+sns.set(rc={"figure.figsize": (12, 22)})
+sns.heatmap(corr, cmap="RdBu")
+plt.show()
+
+
+#Yüksek Korelasyonlu Değişkenlerin Silinmesi
+
+cor_matrix = df.corr().abs()
+
+upper_triangle_matrix = cor_matrix.where(np.triu(np.ones(cor_matrix.shape), k = 1).astype(np.bool))
+
+drop_list = [col for col in upper_triangle_matrix.columns if any(upper_triangle_matrix[col] > 0.90)]
+
+cor_matrix[drop_list]
+
+df.drop(drop_list, axis=1)
+
+#Yukarıdaki işlemlerin fonksiyonlaştırılması:
+
+def high_correlated_cols(dataframe, plot=False, corr_th=0.90):
+    corr = dataframe.corr()
+    cor_matrix = corr.abs()
+    upper_triangle_matrix = cor_matrix.where(np.triu(np.ones(cor_matrix.shape), k = 1).astype(np.boll))
+    drop_list = [col for col in upper_triangle_matrix.columns if any(upper_triangle_matrix[col] > corr_th)]
+
+    if plot:
+        import seaborn as sns
+        import matplotlib.pyplot as plt
+        sns.set(rc={"figure.figsize": (15, 15)})
+        sns.heatmap(corr, cmap="RdBu")
+        plt.show()
+
+    return drop_list
+
+high_correlated_cols(df)
+drop_list = high_correlated_cols(df, plot=True)
+
+df.drop(drop_list, axis=1)
+high_correlated_cols(df.drop(drop_list, axis=1), plot=True)
 
